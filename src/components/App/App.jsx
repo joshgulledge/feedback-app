@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import {useDispatch, useSelector} from 'react-redux';
+// import {useDispatch, useSelector} from 'react-redux';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Feeling from '../Feeling/feeling';
-import Understand from '../Feeling/feeling';
+import Understand from '../Understand/understand';
 
 
 
@@ -20,11 +20,11 @@ function App() {
       {/* make the different routes here */}
       <Router>
       {/* home starts at feelings feedback */}
-        <Route exact path='/feeling'>
+        <Route path='/feeling' exact>
           <Feeling />
         </Route>
 
-        <Route exact path='/understand'>
+        <Route path='/understand' exact>
           <Understand />
         </Route>
 
