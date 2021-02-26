@@ -1,16 +1,22 @@
-import React, {useState} from 'react';
+import React from 'react';
 import axios from 'axios';
 import './App.css';
+import {useDispatch, useSelector} from 'react-redux';
 
 
 function App() {
 
-  const [feelingInput, setFeelingInput] = useState('');
+  // allows us to send things to redux
+  const dispatch = useDispatch();
+  
 
   const saveFeelingInput = function (e) {
-    console.log('target value: ', e.target.value);
-    setFeelingInput(e.target.value);
-    console.log('feeling input is: ', feelingInput);
+    // send the value to redux to handle
+    dispatch({
+      type: 'SET_FEELING_INPUT',
+      payload: e.target.value
+    }) // end dispatch
+
   }; // end saveFeelingInput
 
   return (
@@ -21,7 +27,6 @@ function App() {
       </header>
         <p>How are you feeling today? 1 is Terrible and 5 is Fantastic</p>
         <input type="number" 
-        value={feelingInput} 
         placeholder="Enter a number" 
         onChange={saveFeelingInput}
         />
