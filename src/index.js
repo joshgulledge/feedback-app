@@ -18,6 +18,9 @@ const feelingReducer = function (state = 0, action) {
 } // end feelingReducer
 
 const understandReducer = function (state = 0, action) {
+
+  if (action.type === 'SET_UNDERSTAND_INPUT') return action.payload;
+  
   return state;
 } // end understandReducer
 
