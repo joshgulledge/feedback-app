@@ -3,9 +3,12 @@ import axios from 'axios';
 import './App.css';
 // import {useDispatch, useSelector} from 'react-redux';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
+
+// import the components
 import Feeling from '../Feeling/feeling';
 import Understand from '../Understand/understand';
 import Supported from '../Supported/supported';
+import Comments from '../Comments/comments';
 
 
 
@@ -30,6 +33,10 @@ function App() {
 
         <Route path='/supported' exact>
           <Supported />
+        </Route>
+
+        <Route path='/comments' exact>
+          <Comments />
         </Route>
 
       </Router>
