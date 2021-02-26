@@ -1,9 +1,9 @@
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 const Supported = function () {
-
-   // allows us to send things to redux
    const dispatch = useDispatch();
+   const history = useHistory();
 
   const saveSupportedInput = function (e) {
     // send the value to redux to handle
@@ -21,6 +21,7 @@ const Supported = function () {
        placeholder="Enter a number" 
        onChange={saveSupportedInput}
       />
+      <button onClick={() => history.push('/comments')}>NEXT</button>
     </div>
   )
 } // end Supported

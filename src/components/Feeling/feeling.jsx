@@ -1,8 +1,12 @@
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 const Feeling = function () {
+  // this lets us use history to move around pages... will be in all pages
+  const history = useHistory();
 
-   // allows us to send things to redux
+   // allows us to send things to redux...
+  //  will be on all pages
    const dispatch = useDispatch();
 
   const saveFeelingInput = function (e) {
@@ -11,6 +15,7 @@ const Feeling = function () {
       type: 'SET_FEELING_INPUT',
       payload: e.target.value
     }) // end dispatch
+
   }; // end saveFeelingInput
 
 
@@ -21,6 +26,8 @@ const Feeling = function () {
        placeholder="Enter a number" 
        onChange={saveFeelingInput}
       />
+      {/* on click move to next page */}
+      <button onClick={(() => {history.push('/understand')})}>Next</button>
     </div>
   )
 } // end Feeling

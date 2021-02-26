@@ -9,12 +9,15 @@ import Feeling from '../Feeling/feeling';
 import Understand from '../Understand/understand';
 import Supported from '../Supported/supported';
 import Comments from '../Comments/comments';
+import Home from '../Home/home';
+import Submit from '../Submit/submit';
 
 
 
 function App() {
 
   return (
+    // Keep the header in all pages
     <div className='App'>
       <header className='App-header'>
         <h1 className='App-title'>Feedback!</h1>
@@ -22,7 +25,12 @@ function App() {
       </header>
       {/* make the different routes here */}
       <Router>
-      {/* home starts at feelings feedback */}
+      {/* home leads to feelings then continue moving with submit */}
+
+      <Route path='/' exact>
+          <Home />
+        </Route>
+
         <Route path='/feeling' exact>
           <Feeling />
         </Route>
@@ -39,9 +47,13 @@ function App() {
           <Comments />
         </Route>
 
+        <Route path='/submit' exact>
+          <Submit />
+        </Route>
+
       </Router>
     </div>
   );
-}
+}; 
 
 export default App;

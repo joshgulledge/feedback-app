@@ -1,9 +1,9 @@
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 const Understand = function () {
-
-   // allows us to send things to redux
    const dispatch = useDispatch();
+   const history = useHistory();
 
   const saveUnderstandInput = function (e) {
     // send the value to redux to handle
@@ -21,6 +21,7 @@ const Understand = function () {
        placeholder="Enter a number" 
        onChange={saveUnderstandInput}
       />
+      <button onClick={(() => {history.push('/supported')})}>NEXT</button>
     </div>
   )
 } // end Understand

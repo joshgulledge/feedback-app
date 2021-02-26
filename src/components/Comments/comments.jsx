@@ -1,9 +1,9 @@
 import {useDispatch} from 'react-redux';
+import {useHistory} from 'react-router-dom';
 
 const Comments = function () {
-
-   // allows us to send things to redux
-   const dispatch = useDispatch();
+  const history = useHistory();
+  const dispatch = useDispatch();
 
   const saveCommentsInput = function (e) {
     // send the value to redux to handle
@@ -21,6 +21,7 @@ const Comments = function () {
        placeholder="Enter your comment" 
        onChange={saveCommentsInput}
       />
+      <button onClick={() => history.push('/submit')}>NEXT</button>
     </div>
   )
 } // end Comments
