@@ -25,6 +25,9 @@ const understandReducer = function (state = 0, action) {
 } // end understandReducer
 
 const supportedReducer = function (state = 0, action) {
+
+  if(action.type === 'SET_SUPPORTED_INPUT') return action.payload;
+  
   return state;
 } // end supportedReducer
 

@@ -5,12 +5,12 @@ import './App.css';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Feeling from '../Feeling/feeling';
 import Understand from '../Understand/understand';
+import Supported from '../Supported/supported';
 
 
 
 function App() {
 
-  
   return (
     <div className='App'>
       <header className='App-header'>
@@ -26,6 +26,10 @@ function App() {
 
         <Route path='/understand' exact>
           <Understand />
+        </Route>
+
+        <Route path='/supported' exact>
+          <Supported />
         </Route>
 
       </Router>
