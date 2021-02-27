@@ -1,5 +1,6 @@
 import {useHistory} from 'react-router-dom';
 import {useSelector} from 'react-redux';
+import axios from 'axios';
 
 const Submit = function () {
   const history = useHistory();
@@ -7,13 +8,23 @@ const Submit = function () {
   // this gives us all the values entered.
   // i did one per page
   const feeling = useSelector(store => store.feelingReducer);
-  const understand = useSelector(store => store.understandReducer);
-  const supported = useSelector(store => store.supportedReducer);
+  const understanding = useSelector(store => store.understandReducer);
+  const support = useSelector(store => store.supportedReducer);
   const comments = useSelector(store => store.commentsReducer);
   
 
   const submitInfo = function () {
-
+    // send info to the database
+    axios({
+      method: 'POST',
+      url: '/addFeedback',
+      data: {
+        feeling,
+        understanding,
+        support,
+        comments
+      }
+    }); // end axios call
     
     // go back to home page
     history.push('/');
@@ -28,9 +39,9 @@ const Submit = function () {
 
       <p>For how you are feeling: {feeling}</p>
 
-      <p>For how well you are understanding: {understand}</p>
+      <p>For how well you are understanding: {understanding}</p>
 
-      <p>For how supported you feel: {supported}</p>
+      <p>For how supported you feel: {support}</p>
 
       {comments ? <p>You made the extra comment: {comments} </p> : <p> Thank You for your feedback</p> }
 
