@@ -18,14 +18,23 @@ const feelingReducer = function (state = 0, action) {
 } // end feelingReducer
 
 const understandReducer = function (state = 0, action) {
+
+  if (action.type === 'SET_UNDERSTAND_INPUT') return action.payload;
+  
   return state;
 } // end understandReducer
 
 const supportedReducer = function (state = 0, action) {
+
+  if(action.type === 'SET_SUPPORTED_INPUT') return action.payload;
+
   return state;
 } // end supportedReducer
 
 const commentsReducer = function (state = '', action) {
+
+  if(action.type === 'SET_COMMENTS_INPUT') return action.payload;
+
   return state;
 } // end commentsReducer
 
