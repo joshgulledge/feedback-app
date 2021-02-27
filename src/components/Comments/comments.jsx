@@ -6,7 +6,7 @@ const Comments = function () {
   const dispatch = useDispatch();
 
   const saveCommentsInput = function (e) {
-    // send the value to redux to handle
+    // this can be left blank if desired
     dispatch({
       type: 'SET_COMMENTS_INPUT',
       payload: e.target.value
