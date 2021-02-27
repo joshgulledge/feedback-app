@@ -10,10 +10,15 @@ const Feeling = function () {
    const dispatch = useDispatch();
 
   const saveFeelingInput = function (e) {
+    const feelingInput = e.target.value;
+
+    
+    // validate the answer
+
     // send the value to redux to handle
     dispatch({
       type: 'SET_FEELING_INPUT',
-      payload: e.target.value
+      payload: feelingInput
     }) // end dispatch
 
   }; // end saveFeelingInput
