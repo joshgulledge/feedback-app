@@ -21,9 +21,19 @@ const Submit = function () {
 
   return (
     <div>
+      {/* Show a preview of responses */}
       <p>
-        this is the submit page
+        Your answers were:
       </p>
+
+      <p>For how you are feeling: {feeling}</p>
+
+      <p>For how well you are understanding: {understand}</p>
+
+      <p>For how supported you feel: {supported}</p>
+
+      {comments ? <p>You made the extra comment: {comments} </p> : <p> Thank You for your feedback</p> }
+
       <button onClick={submitInfo}>Finalize Info</button>
     </div>
   )
