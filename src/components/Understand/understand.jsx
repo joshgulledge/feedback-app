@@ -2,6 +2,10 @@ import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import {useState} from 'react';
 
+// material Ui components
+import Button from '@material-ui/core/Button';
+
+
 // see feeling component for details 
 const Understand = function () {
    const dispatch = useDispatch();
@@ -37,13 +41,13 @@ const Understand = function () {
       <p>How well did you understand the material? 1 is Terrible and 5 is Fantastic</p>
 
     {/* this allows the user to go back */}
-      <button onClick={previous}>Previous</button>
+      <Button variant="contained" color="primary" onClick={previous}>Previous</Button>
 
       <input type="number" 
        placeholder="Enter a number" 
        onChange={(e) => setInput(e.target.value)}
       />
-      <button onClick={nextClicked}>NEXT</button>
+      <Button variant="contained" color="primary" onClick={nextClicked}>NEXT</Button>
     </div>
   ) // end return
 }; // end Understand
