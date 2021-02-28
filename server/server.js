@@ -47,7 +47,7 @@ app.post('/addFeedback', (req,res) => {
 
 }); // end post route
 
-app.delete('/:id', (req,res) => {
+app.delete('/deleteFeedback/:id', (req,res) => {
   // get id
   const feedbackId = req.params.id;
   // sql code to send
@@ -59,6 +59,7 @@ app.delete('/:id', (req,res) => {
   // send pool query
   pool.query(SQLtext, [feedbackId])
   .then(dbRes => {
+    console.log(dbRes);
     res.sendStatus(200);
   })
   .catch(err => {

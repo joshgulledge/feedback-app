@@ -37,7 +37,7 @@ const Admin = function () {
             <th>Comments</th>
           </tr>
         </thead>
-          <Feedback feedbackList={feedbackList}/>
+          <Feedback getFeedback={getFeedback} feedbackList={feedbackList}/>
       </table>
     
   )
