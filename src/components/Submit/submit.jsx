@@ -1,6 +1,8 @@
 import {useHistory} from 'react-router-dom';
 import {useSelector} from 'react-redux';
 import axios from 'axios';
+import swal from 'sweetalert';
+
 
 const Submit = function () {
   const history = useHistory();
@@ -24,10 +26,22 @@ const Submit = function () {
         support,
         comments
       }
-    }); // end axios call
+    }).then(() => {
+      // use sweet alert to show success
+      swal({
+        title: "Thank You",
+        text: "Your feedback has been submitted",
+        icon: "success",
+        button: "Start New Feedback"
+      }).then((clicked) => {
+        // go back to home page
+        history.push('/');
+      })
+      // ^ this moves to start page on button click
+    })
+    .catch(err => console.log(err)); // end axios call
     
-    // go back to home page
-    history.push('/');
+    
   }
 
   return (
