@@ -26,10 +26,19 @@ const Understand = function () {
     history.push('/supported')
   }; // end nextClicked
 
+  // this will allow the user to go back
+  const previous = function () {
+    history.push('/feeling');
+  }; // end previous
+
 
   return (
     <div>
       <p>How well did you understand the material? 1 is Terrible and 5 is Fantastic</p>
+
+    {/* this allows the user to go back */}
+      <button onClick={previous}>Previous</button>
+
       <input type="number" 
        placeholder="Enter a number" 
        onChange={(e) => setInput(e.target.value)}
