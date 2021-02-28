@@ -11,6 +11,7 @@ import Supported from '../Supported/supported';
 import Comments from '../Comments/comments';
 import Home from '../Home/home';
 import Submit from '../Submit/submit';
+import Admin from '../Admin/admin';
 
 
 
@@ -49,6 +50,10 @@ function App() {
 
         <Route path='/submit' exact>
           <Submit />
+        </Route>
+
+        <Route path='/admin' exact>
+          <Admin />
         </Route>
 
       </Router>
