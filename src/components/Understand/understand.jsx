@@ -1,7 +1,6 @@
 import {useDispatch} from 'react-redux';
 import {useHistory} from 'react-router-dom';
 import {useState} from 'react';
-// import swal from 'sweetalert';
 
 
 // material Ui components
@@ -31,11 +30,6 @@ const Understand = function () {
     // }, // couldn't figure out what this was doing
   }));
   const classes = useStyles(); // for material ui 
-
-  // sets the input value when number is selected
-  const handleChange = (e) => {
-    setInput(e.target.value);
-  };
 
   const nextClicked = function () {
     // see feeling component for details 
@@ -71,7 +65,9 @@ const Understand = function () {
         <Select
           labelId="select-label"
           value={input}
-          onChange={handleChange}
+          onChange={(e) =>
+            setInput(e.target.value)
+          }
         >
           <MenuItem value={1}>1</MenuItem>
           <MenuItem value={2}>2</MenuItem>
