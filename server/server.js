@@ -14,9 +14,23 @@ app.use(express.static('build'));
 // import pool to do the query
 const pool = require('./modules/pool');
 
+app.get('/getFeedback', (req, res) => {
+  console.log('in get', req.body);
+  
+  const SQLtext = `
+  SELECT * FROM "feedback";
+  `;
+
+  pool.query(SQLtext)
+  .then(dbRes => {
+    res.send(dbRes.rows);
+  })
+  .catch(err => console.log(err))
+
+});
 
 app.post('/addFeedback', (req,res) => {
-  console.log('in the post', req.body);
+  // console.log('in the post', req.body);
 
   const SQLtext = `
   INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
