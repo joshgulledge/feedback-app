@@ -52,6 +52,7 @@ function App() {
           <Submit />
         </Route>
 
+  {/* 'secret' page. no path goes here, must be typed in the url manually  */}
         <Route path='/admin' exact>
           <Admin />
         </Route>
