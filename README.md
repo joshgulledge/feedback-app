@@ -1,9 +1,13 @@
-# Project Name
+# Josh's Basic Feedback Saver
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+- This app collects basic feedback information from the users
+- It saves the feedback info in a Database
+- Allows users to go back and change their responses before submitting
+- Styled with material ui
+- Uses sweetalerts for pop up notifications
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
+
