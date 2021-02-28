@@ -13,14 +13,23 @@ const Comments = function () {
     }) // end dispatch
   }; // end saveCommentsInput
 
+  // this will allow the user to go back
+  const previous = function () {
+    history.push('/understand');
+  }; // end previous
 
   return (
     <div>
       <p>Do you have any comments?</p>
+
+      {/* this allows the user to go back */}
+      <button onClick={previous}>Previous</button>
+      
       <input type="text" 
        placeholder="Enter your comment" 
        onChange={saveCommentsInput}
       />
+
       <button onClick={() => history.push('/submit')}>NEXT</button>
     </div>
   )

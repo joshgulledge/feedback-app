@@ -25,14 +25,24 @@ const Supported = function () {
     history.push('/comments')
   }; // end nextClicked
 
+  // this will allow the user to go back
+  const previous = function () {
+    history.push('/understand');
+  }; // end previous
+
 
   return (
     <div>
       <p>How well were you supported today? 1 is Terrible and 5 is Fantastic</p>
+
+      {/* this allows the user to go back */}
+      <button onClick={previous}>Previous</button>
+
       <input type="number" 
        placeholder="Enter a number" 
        onChange={(e) => setInput(e.target.value)}
       />
+
       <button onClick={nextClicked}>NEXT</button>
     </div>
   )
