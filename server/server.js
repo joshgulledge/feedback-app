@@ -14,9 +14,7 @@ app.use(express.static('build'));
 // import pool to do the query
 const pool = require('./modules/pool');
 
-app.get('/getFeedback', (req, res) => {
-  console.log('in get', req.body);
-  
+app.get('/getFeedback', (req, res) => {  
   const SQLtext = `
   SELECT * FROM "feedback";
   `;
