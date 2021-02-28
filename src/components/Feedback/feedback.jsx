@@ -1,6 +1,10 @@
 
 const Feedback = function ({feedbackList}) {
 
+  const sendDelete = function (e) {
+    console.log(e.target.id);
+  }
+
   return (
     <tbody>
       {/* loop through list */}
@@ -11,6 +15,7 @@ const Feedback = function ({feedbackList}) {
             <td>{feedback.understanding}</td>
             <td>{feedback.support}</td>
             <td>{feedback.comments}</td>
+            <button id={feedback.id} onClick={sendDelete}>Delete</button>
           </tr>
         )
       })}  

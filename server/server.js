@@ -47,6 +47,27 @@ app.post('/addFeedback', (req,res) => {
 
 }); // end post route
 
+app.delete('/:id', (req,res) => {
+  // get id
+  const feedbackId = req.params.id;
+  // sql code to send
+  const SQLtext = `
+  DELETE FROM "feedback"
+  WHERE "id" = $1
+  `;
+
+  // send pool query
+  pool.query(SQLtext, [feedbackId])
+  .then(dbRes => {
+    res.sendStatus(200);
+  })
+  .catch(err => {
+    console.log(err);
+    res.sendStatus(500);
+  }); // end query
+
+}); // end delete
+
 
 
 /** ---------- START SERVER ---------- **/
