@@ -6,7 +6,7 @@ const Feedback = function ({feedbackList}) {
       {/* loop through list */}
       {feedbackList.map(feedback => {
         return(
-          <tr>
+          <tr key={feedback.id}>
             <td>{feedback.feeling}</td>
             <td>{feedback.understanding}</td>
             <td>{feedback.support}</td>

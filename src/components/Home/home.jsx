@@ -1,4 +1,6 @@
 import {useHistory} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+// ^ From Material UI
 
 const Home = function () {
   // this lets us use history to move around pages
@@ -10,7 +12,7 @@ const Home = function () {
         To begin the feedback application please press start. This will take about two minutes to complete.
       </p>
       {/* when button is clicked moves to next page */}
-      <button onClick={(() => {history.push('/feeling')})}>START</button>
+      <Button variant="contained" color="primary" onClick={(() => {history.push('/feeling')})}>START</Button>
     </div>
   )
 };

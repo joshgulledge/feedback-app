@@ -3,6 +3,9 @@ import {useSelector} from 'react-redux';
 import axios from 'axios';
 import swal from 'sweetalert';
 
+// material ui compontents
+import Button from '@material-ui/core/Button';
+
 
 const Submit = function () {
   const history = useHistory();
@@ -36,7 +39,7 @@ const Submit = function () {
       }).then((clicked) => {
         // go back to home page
         history.push('/');
-      })
+      });
       // ^ this moves to start page on button click
     })
     .catch(err => console.log(err)); // end axios call
@@ -59,7 +62,10 @@ const Submit = function () {
 
       {comments ? <p>You made the extra comment: {comments} </p> : <p> Thank You for your feedback</p> }
 
-      <button onClick={submitInfo}>Finalize Info</button>
+      <Button variant="contained" color="primary" onClick={() => history.push('/comments')}>Previous</Button>
+
+
+      <Button variant="contained" color="primary" onClick={submitInfo}>Finalize Info</Button>
     </div>
   )
 };

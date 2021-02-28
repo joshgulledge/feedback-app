@@ -10,7 +10,7 @@ const Admin = function () {
   // this will run getFeedback function on page load
   useEffect(() => {
     getFeedback();
-  });
+  }, []);
 
   const getFeedback = function () {
     console.log('in getFeedback');
@@ -25,9 +25,6 @@ const Admin = function () {
 
   }; // end getFeedback
 
-  const makeFeedbackList = function () {
-
-  }
 
   return (
     
